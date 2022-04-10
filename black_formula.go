@@ -13,7 +13,7 @@ func BlackFormula(
 	var logMoneyness = math.Log(forward / strike)
 	var stdDeviation = vol * math.Sqrt(expiry)
 
-	var d1 = logMoneyness/stdDeviation + stdDeviation
+	var d1 = logMoneyness/stdDeviation + 0.5*stdDeviation
 	var d2 = d1 - stdDeviation
 
 	var normal = distuv.Normal{Mu: 0., Sigma: 1.}
